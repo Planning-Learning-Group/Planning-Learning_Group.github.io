@@ -1,0 +1,35 @@
+{% extends "!theme/page.html" %}
+
+{% from "bibentry.html" import bibentry, bibcss %}
+
+{#
+TODO
+    - fix issue with extra period in title if title ends in punctuation
+#}
+
+{% block head %}
+{{ super() }}
+<style>
+{{ bibcss }}
+</style>
+{% endblock %}
+
+{% block bottom %}
+<h2>Publications</h2>
+{% for ref in bibliography %}
+    {% if not loop.previtem %}
+        <h3>{{ ref.year }}</h3>
+        <ul>
+    {% elif loop.previtem.year != ref.year %}
+        </ul>
+        <h3 class="mt-5">{{ ref.year }}</h3>
+        <ul>
+    {% endif %}
+
+            <li>{{ bibentry(ref) }}</li>
+
+    {% if loop.last %}
+        </ul>
+    {% endif %}
+{% endfor %}
+{% endblock %}

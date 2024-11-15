@@ -1,0 +1,2 @@
+Title: Awards
+Template: awards

@@ -1,0 +1,27 @@
+{% extends "page.html" %}
+
+{% block bottom %}
+        <div class="rleap-roster">
+            {% for cat in people_categories %}
+            <h3>{{ cat }}</h3>
+
+
+            <div class="rleap-roster-block row justify-content-sm-start justify-content-md-start mt-4">
+                {% for person in people[cat] %}
+                <div class="col-auto mb-3">
+                    <div class="card shadow h-100">
+                        <a href="../{{ person.key }}">
+                            <img class="card-img-top" src="{{ url('images/' + person["picture"]) }}" alt="{{ person["name"] }}">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ person["name"] }}</h4>
+                                <h5 class="card-subtitle text-secondary">{{ person["subtitle"] }}</h5>
+                                {# <small class="text-muted">Last updated 3 mins ago</small>#}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+{% endblock %}

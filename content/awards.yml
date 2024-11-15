@@ -1,0 +1,20 @@
+
+# Each category has an ID to be used in the "awards" list below, plus the name for that
+# category that could be used in the web.
+category:
+  - {id: dissertation, name: Dissertation Awards}
+  - {id: paper, name: Best Paper Awards}
+  - {id: reviewer, name: PC Member Awards}
+  - {id: competition, name: Competition Awards}
+  - {id: other, name: Other Awards}
+
+# the keys name, description, awarded_at, category, awardees, and date are mandatory.
+# optional keys: only_personal_page, document
+
+awards:
+  - name: "Award name"
+    description: "for the paper *paper name and link*"
+    awarded_at: "conference name and link"
+    category: paper
+    awardees: [person-1, daniel-gnad]
+    date: 2024-04-30

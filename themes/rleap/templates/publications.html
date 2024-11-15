@@ -1,0 +1,34 @@
+{% extends "page.html" %}
+
+{% from "bibentry.html" import bibentry, bibcss %}
+
+{% block head %}
+{{ super() }}
+<style>
+{{ bibcss }}
+</style>
+{% endblock %}
+
+{% block bottom %}
+    <div class="container">
+        <h2>Publications</h2>
+
+        {% for ref in group_bibliography %}
+            {% if not loop.previtem %}
+                <h3>{{ ref.year }}</h3>
+                <ul>
+            {% elif loop.previtem.year != ref.year %}
+                </ul>
+                <h3 class="mt-5">{{ ref.year }}</h3>
+                <ul>
+            {% endif %}
+
+                    <li>{{ bibentry(ref) }}</li>
+
+            {% if loop.last %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+{% endblock %}

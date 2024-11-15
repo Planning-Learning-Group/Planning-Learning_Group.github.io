@@ -1,0 +1,17 @@
+# Entries must be ordered reverse-chronologically by date.
+# Dates should be the day of the conference paper presentation or journal article publication.
+# Order the information for an individual paper alphabetically by key.
+
+mateos-melero-et-al-ewrl2024:
+  date: 2024-10-28
+  projects: [naiss, wasp]
+
+# example:
+#   date: 2024-06-28
+#   links:
+#     - href: /papers/seipp-et-al-tr2012.pdf
+#       filetype: technical report
+#   note: >-
+#     This is a note
+#   zenodo: 3951058
+#   youtube: acuiugo

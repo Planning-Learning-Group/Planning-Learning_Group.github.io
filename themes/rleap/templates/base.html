@@ -1,0 +1,70 @@
+{%- macro url(destination) -%}
+{%- if destination|lower|truncate(4, True, '') == 'http' or not destination -%}
+{{ destination }}
+{%- elif destination|first == '/' -%}
+{{ SITEURL + destination }}
+{%- else -%}
+{{ SITEURL + '/' + destination }}
+{%- endif -%}
+{%- endmacro -%}
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>{% block title %}| {{ SITENAME }}{% endblock %}</title>
+  <link rel="canonical" href="{{ SITEURL }}/{{ output_file }}">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+{#  <link rel="apple-touch-icon" href="{{ SITEURL }}/apple-touch-icon.png" sizes="180x180">#}
+{#  <link rel="icon" type="image/png" href="{{ SITEURL }}/favicon-32x32.png" sizes="32x32">#}
+{#  <link rel="icon" type="image/png" href="{{ SITEURL }}/favicon.png" sizes="64x64">#}
+{#  <link rel="manifest" href="{{ SITEURL }}/manifest.json">#}
+{#  <meta name="theme-color" content="#333333">#}
+
+  <link rel="stylesheet" href="{{ url('theme/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url('theme/css/fontawesome.min.css') }}">
+  <link rel="stylesheet" href="{{ url('theme/css/pygments/default.min.css') }}">
+  <link rel="stylesheet" href="{{ url('theme/css/theme.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  {% block head %}{% endblock %}
+  {% include 'include/analytics.html' %}
+</head>
+
+<body>
+
+<!-------------------------------------------------------->
+<!-- Header -->
+<!-------------------------------------------------------->
+<header class="header">
+{% include 'include/header.html' %}
+</header>
+
+
+<!-------------------------------------------------------->
+<!-- Main Content -->
+<!-------------------------------------------------------->
+{% block content %}{% endblock %}
+
+<!-------------------------------------------------------->
+<!-- Footer -->
+<!-------------------------------------------------------->
+<footer class="footer">
+  {% include 'include/footer.html' %}
+</footer>
+
+<!-------------------------------------------------------->
+<!-- jQuery and Bootstrap -->
+<!-------------------------------------------------------->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+</body>
+
+</html>

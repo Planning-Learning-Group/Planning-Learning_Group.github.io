@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% from "bibentry.html" import bibentry, bibcss %}
+
+{% block head %}
+{{ super() }}
+<meta name="description" content="{{ page.summary|striptags }}">
+
+<style>
+{{ bibcss }}
+</style>
+{% endblock %}
+
+{% block title %}
+{{ page.title | striptags() | replace("-", " ") | title() }} {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+{% set content_split = page.content.split('
+<!-- ;;; finish description ;;; -->') %}
+{% set person_description = content_split[0] %}
+{% set content = content_split[1] %}
+
+
+<article class="main">
+    <div class="row">
+        <div class="container">
+            {% for cat in people_categories %}
+            {% for person in people[cat] %}
+            {% if page.title == person["key"] %}
+
+            {% if person.category == "former" %}
+                <div class="alert alert-info" role="alert">
+                    I have left the Machine Reasoning lab.
+                    {% if person.personal_web %}
+                    Please see my <a href="{{ person.personal_web }}">personal website</a>.
+                    {% endif %}
+                </div>
+                {% endif %}
+
+            <div class="rleap-roster">
+                <div class="col-auto mb-3" style="float:left; margin-right:30px">
+                    <div class="card shadow h-100">
+                        <img class="card-img-top" src="{{ url('images/' + person["picture"]) }}" alt="{{ person["
+                            name"] }}">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ person["name"] }}</h4>
+                            <h5 class="card-subtitle text-secondary">{{ person["subtitle"] }}</h5>
+                            {# <small class="text-muted">Last updated 3 mins ago</small>#}
+                        </div>
+                        <div class="card-footer">
+
+                            {% if person.email %}
+                            <a target="_blank" href="mailto:{{ person.email }}" class="card-link">
+                                <i class="fas fa-envelope" title="Email"></i>
+                            </a>
+                            {% endif %}
+
+                            {% if person.orcid_id %}
+                            <a target="_blank" href="https://orcid.org/{{ person.orcid_id }}" class="card-link">
+                                <i class="ai ai-orcid" title="ORCID"></i>
+                            </a>
+                            {% endif %}
+
+                            {% if person.scholar_id %}
+                            <a target="_blank" href="https://scholar.google.com/citations?user={{ person.scholar_id }}"
+                                class="card-link">
+                                <i class="ai ai-google-scholar" title="Google Scholar"></i>
+                            </a>
+                            {% endif %}
+
+                            {% if person.github %}
+                            <a target="_blank" href="{{ person.github }}" class="card-link">
+                                <i class="fab fa-github" title="GitHub"></i>
+                            </a>
+                            {% endif %}
+
+                            {% if person.twitter %}
+                            <a target="_blank" href="{{ person.twitter }}" class="card-link">
+                                <i class="fab fa-twitter" title="Twitter"></i>
+                            </a>
+                            {% endif %}
+
+                            {% if person.linkedin %}
+                            <a target="_blank" href="{{ person.linkedin }}" class="card-link">
+                                <i class="fab fa-linkedin" title="LinkedIn"></i>
+                            </a>
+                            {% endif %}
+
+                            {% if person.dblp %}
+                            <a target="_blank" href="{{ person.dblp }}" class="card-link">
+                                <i class="ai ai-dblp" title="DBLP"></i>
+                            </a>
+                            {% endif %}
+
+                            {% if person.personal_web %}
+                            <a target="_blank" href="{{ person.personal_web }}" class="card-link">
+                                <i class="fas fa-user" title="Personal Website"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                {{ person_description }}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {{ content }}
+    </div>
+
+    {% if awards_by_person.get(person.name) %}
+    <div class="container">
+        <h2>Awards</h2>
+        <ul>
+        {% for award in awards_by_person.get(person.name) %}
+
+            <li><strong>{{ award.name }}</strong> {{ award.description }}
+            {% if award.awardees %}
+            with {{ award.awardees }}
+            {% endif %}
+            {{ award.awarded_at }}.</li>
+
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if bibliography_by_person.get(person.name) %}
+    <div class="container">
+        <h2>Publications</h2>
+
+        {% for ref in bibliography_by_person.get(person.name) %}
+        {% if not loop.previtem %}
+        <h3>{{ ref.year }}</h3>
+        <ul>
+            {% elif loop.previtem.year != ref.year %}
+        </ul>
+        <h3 class="mt-5">{{ ref.year }}</h3>
+        <ul>
+            {% endif %}
+
+            <li>{{ bibentry(ref) }}</li>
+
+            {% if loop.last %}
+        </ul>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+    {% endif %}
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+
+</article>
+{% endblock %}

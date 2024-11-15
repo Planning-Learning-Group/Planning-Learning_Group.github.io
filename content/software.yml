@@ -1,0 +1,81 @@
+categories:
+  - name: Robotics
+    id: robots
+  - name: Planning Software
+    id: software
+  - name: Competitions
+    id: competition
+
+
+software:
+  - title: Robot NAO H25
+    description: The most used humanoid robot for research and teaching
+    url: https://corporate-internal-prod.aldebaran.com/en/nao
+    maintainers: [Nerea Luis Minguenza, Jose Carlos González, Jose Carlos Pulido]
+    category: robots
+  
+  - title: Robot Pioneer P3DX
+    description: Pioneer 3 DX runs best on hard surfaces. It can traverse low sills and household power cords and climb most wheelchair ramps
+    url: https://corporate-internal-prod.aldebaran.com/en/nao
+    maintainers: [Nerea Luis Minguenza, Jose Carlos González, Jose Carlos Pulido]
+    category: robots
+
+  - title: PELEA
+    description: Planning Execution and Learning Architecture
+    url: https://www.uc3m.es/Home
+    maintainers: [Moises Martínez Muñoz]
+    category: software
+
+  - title: SAYPHI
+    description: Sayphi is an automated planner built with the aim of integrating various machine learning techniques applied to planning
+    url: https://www.uc3m.es/Home
+    maintainers: [Tomás de la Rosa Turbides]
+    category: sotware
+
+  - title: PLTOOL
+    description: A mixed initiative for the automatic planning of tasks
+    url: https://www.uc3m.es/Home
+    maintainers: [Daniel Borrajo Millán]
+    category: software
+
+  - title: BRT
+    description: Biased Rapidly-exploring Tree
+    url: https://www.uc3m.es/Home
+    category: software
+    maintainers: [Vidal Alcázar]
+
+  - title: CBP
+    description: Cost-Based Planner
+    url: https://www.uc3m.es/Home
+    category: software
+    maintainers: [Raquel Fuentetaja]
+
+  - title: CBP2
+    description: Cost-Based Planner 2
+    url: https://www.uc3m.es/Home
+    category: software
+    maintainers: [Raquel Fuentetaja]
+
+  - title: MAPR-CMAP
+    description: Multi-Agent Planning
+    url: https://www.uc3m.es/Home
+    category: software
+    maintainers: [Daniel Borrajo Millán, Susana Fernández Arregui]
+
+  - title: PDDL Editor
+    description: Grapkical PDDL Editor
+    url: https://www.uc3m.es/Home
+    category: software
+
+  - title: Deterministic part IPC
+    description: The seventh international planning competition, IPC-2011 for short, has been organized in the context of ICAPS-2011 
+    url: https://www.uc3m.es/Home
+    category: competition
+    maintainers: [Ángel García Olaya, Sergio Jiménez Celorrio, Carlos Linare López]
+
+  - title: Planning and Learning IPC
+    description: The seventh international planning competition, IPC-2011 for short, has been organized in the context of ICAPS-2011 
+    url: https://www.uc3m.es/Home
+    category: competition
+    maintainers: [Sergio Jiménez Celorrio, Amanda Coles, Andrew Coles]
+

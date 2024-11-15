@@ -1,0 +1,29 @@
+
+# Each category has an ID to be used in the "people" list below, plus the name for that
+# category that will be used in the web. Note that the order in the list will be the one on the web too.
+categories:
+  - {id: head, name: Head of Group}
+  - {id: scientist, name: Scientific Staff}
+  - {id: administrator, name: Administrator}
+  - {id: former, name: Former Members}  # Don't use this category manually; specify leave_date instead.
+
+
+# To edit the list of people:
+#   1. Keep entries in (family name) alphabetical order.
+#   2. Keep keys in alphabetical order.
+
+people:
+  - name: Mauricio Salerno
+    subtitle: PhD Student
+    picture: mauricio-salerno.jpg
+    category: scientist
+    key: mauricio-salerno
+    personal_web:
+    email: msalerno@pa.uc3m.es
+    scholar_id: olDNvn4AAAAJ
+    orcid_id: 0000-0002-7664-5847
+    github: https://github.com/msalerno2
+    twitter:
+    linkedin:
+    dblp: 
+    join_date: 2023-06-01

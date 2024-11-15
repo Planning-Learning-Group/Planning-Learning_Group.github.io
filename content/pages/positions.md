@@ -1,0 +1,141 @@
+Title: Positions
+Template: page
+
+## Positions
+
+We are currently looking for a **PhD student** to work on [parallel AI planning]({filename}projects/paip.md).
+
+We expect that there will be more openings for PhD students and postdocs in the near future. If you are interested in working with us, please contact [jendrik-seipp].
+
+Contact: [jendrik-seipp]
+
+## Theses
+
+We offer interesting topics for master theses in the field of AI/ML, often with a focus
+on AI planning. If you are interested, please contact us by
+[email](mailto:jendrik.seipp@liu.se). We will then find a topic that suits your
+interest and background. Here are some examples of available topics:
+
+### Comparing deep reinforcement learning and classical planning for solving puzzles
+
+A recent
+[paper](https://cse.sc.edu/~foresta/assets/files/SolvingTheRubiksCubeWithDeepReinforcementLearningAndSearch_Final.pdf)
+developed the ML pipeline
+[DeepCubeA](https://github.com/forestagostinelli/DeepCubeA) that learns how to
+solve Rubik's cube tasks (and other puzzles). DeepCubeA compares favorably
+against optimal classical planning algorithms in experiments, but in contrast to
+the optimal baselines, DeepCubeA doesn't guarantee to find optimal solutions. To
+obtain a fair comparison, we want to evaluate DeepCubeA against several
+*suboptimal* algorithms from the literature. For this evaluation we'll use
+algorithms that are *bounded* suboptimal or improve their found solutions over
+time, in order to come close to optimal solutions. In addition to Rubik's Cube
+tasks, we will use tasks from Lights Out, n-puzzle and Sokoban.
+
+### Automatically detecting and fixing errors in planning models
+
+The performance of modern planning systems depends on many factors.
+One important factor is whether the input planning tasks contain redundant information.
+An example for this are unused action parameters. These are present
+in many planning benchmarks and can result in many duplicate ground actions.
+This thesis aims to fix standard benchmark sets using a validation tool developed within our lab and to run an
+empirical analysis to test whether this improves the performance of existing planning systems.
+
+### Evolution of Planners
+
+Since more than three decades researchers have been developing AI planners.
+However, since each research paper uses a different set of benchmarks, hardware
+and planners, it's hard to judge the progress of the AI planning field. In this
+project, we want to explore how planner performance has evolved over time. For
+this, we will select the most important planners and run them on the same set of
+benchmarks from past International Planning Competitions. The main challenge
+will be to obtain, compile and run the old planners on modern hardware. Luckily,
+container technology such as Docker and Apptainer can help with this.
+
+### Beyond shortest paths: maximizing rewards in classical planning
+
+Planning is a fundamental aspect of artificial intelligence and involves devising
+a sequence of actions to guide an intelligent agent from its current state to a
+goal state. Classical planning typically seeks a cost-optimal plan, where actions
+have associated costs, with the objective of minimizing the total cost of the
+sequence. In practice, some problems are better addressed by maximizing
+rewards associated with actions, spanning applications as diverse as computational
+linguistics, power grid reconfiguration, and error-correcting code theory.
+This project focuses on exploring the challenge of finding a reward-optimal plan or,
+in a unit cost setting, the longest plan. For a more detailed description of the
+project, see the [attached document]({static}/resources/student-project-beyond-shortest-paths-maximizing-rewards-in-classical-planning.pdf).
+
+### Visualizing action plans with generative machine learning models
+
+Generative models are now powerful enough to generate realistic images and
+videos from natural language texts (see e.g. [Du et
+al.](http://arxiv.org/abs/2302.00111)). In this project we want to test whether
+such deep learning models can be used to generate visualizations of action plans
+obtained with AI planners. The goal is to generate visualizations that are easy
+to understand for humans and that can be used to improve the plans.
+
+### Using LLMs to convert logic formulas to natural language
+
+Large language models (LLMs) such as GPT-4 can generate natural language text
+that is indistinguishable from human-written text. In this project, we want to
+explore whether LLMs can be used to convert logic formulas to natural language.
+This will be useful for explaining the meaning of logic formulas to non-experts,
+for example in the context of AI planning. For example, for the first-order
+logic formula `\forall x \exists y: on(x,y)`, the LLM should generate a sentence
+like "For every object x, there is an object y such that x is on y". We will
+focus on Description Logic formulas generated by the
+[DLPlan](https://github.com/rleap-project/dlplan/) system developed within our
+group.
+
+### Creating an email writing assistant
+
+We want to compare different offline and online language models for the task of
+completing emails within the Thunderbird email client. Important challenges here
+will be to figure out how complex language models need to be and how much
+information from previous conversations we need to feed them to provide useful
+assistance. We want to find out whether we can obtain a freely-available
+privacy-preserving writing assistant. The ultimate aim is to obtain a
+Thunderbird add-on that assists users around the world in writing emails.
+
+## Completed Theses
+
+<script>
+function toggleVisibility(id) {
+  var element = document.getElementById(id);
+  if (element.style.display === 'none') {
+    element.style.display = 'block';
+  } else {
+    element.style.display = 'none';
+  }
+}
+</script>
+
+### Learning Partial Policies for Intractable Domains on Tractable Subsets
+<strong>Viktor Carlsson</strong>&nbsp;&nbsp;
+<button class="btn btn-outline-primary" onclick="toggleVisibility('abstract viktor carlsson')">show/hide abstract</button>
+
+Master's thesis, August 2023. <strong>Download:</strong> [(PDF)](https://liu.diva-portal.org/smash/get/diva2:1796742/FULLTEXT01.pdf) [(DiVA)](https://urn.kb.se/resolve?urn=urn:nbn:se:liu:diva-197755)
+
+<div id="abstract viktor carlsson" style="display: none;">
+An important objective in generalized planning is to find general strategies that allow for efficiently finding a goal-achieving action sequence for any given planning problem from a class of problems over a common domain. Assuming that P != NP, such strategies do not exist in NP-hard, also referred to as intractable, classes of problems. However, partial strategies can be used to guide the search towards the goal. Partial strategies are challenging to find because they tend to overfit the training data. In this work, an intractable class of problems was simplified in such a way that the resulting class of problems became tractable and permitted finding a general strategy. These strategies only efficiently solve the simplified class of problems. However, these strategies are very compact and easy to understand. The general strategies are partial strategies for the respective intractable class of problems. In the experiments, it was shown that the partial strategies provide strong guidance for efficiently solving the intractable class of problems but without guarantees for efficiency. This work considers two classes of NP-hard problems: a version of a traveling salesperson and the Nurikabe puzzle. The problem of finding simplified versions of a class of problems is challenging and needs to be addressed in the literature.
+</div><br>
+
+
+### Compact Representations of State Sets in State Space Search
+<strong>Hugo Axandersson</strong>&nbsp;&nbsp;
+<button class="btn btn-outline-primary" onclick="toggleVisibility('abstract hugo axandersson')">show/hide abstract</button>
+
+Master's thesis, June 2023. <strong>Download:</strong> [(PDF)](https://www.diva-portal.org/smash/get/diva2:1796490/FULLTEXT01.pdf) [(DiVA)](https://urn.kb.se/resolve?urn=urn:nbn:se:liu:diva-197744)
+
+<div id="abstract hugo axandersson" style="display: none;">
+Modern day technological advancements are moving at a rapid pace. In the field of Artificial Intelligence, algorithms are becoming ever faster and process larger amounts of data. These fast algorithms call for data structures that can store this processed data compactly. This premise also holds true in the AI subfield of planning. In the common planning approach of state space search, found states are memorized as to not unnecessarily revisit them. Research has put a big focus on improving the speed of state space searches which in turn leads to a lot of states being stored. A crucial bottleneck then occurs when memory runs out due to storing these large amounts of states. This is where this project, with its exploration of compact state set representations, comes into the picture.</p>
+
+<p>This project's focus is on exploring memory usage for planning by state space search. More specifically, the project investigates compact state set representations for an A* state space search's closed- and open lists. It was hypothesized that the closed list would be the larger of the two which is why a focus was put on testing compact representations of that state set. Results from this project confirm this hypothesis as it is shown that the closed list is the largest and most critical of the two (although the differences between the two become increasingly small for strong heuristics).</p>
+
+<p>Four different state set representations were tested for use as closed lists in an A* algorithm: Level-Ordered Edge Sequences (LOES), compressed LOES (cLOES), Binary Decision Diagram (BDD) and an explicit representation. A primary focus was put on exploring the LOES data structure because of the limited amount of research done on the data structure. Explicit representation was used as the main point of comparison with it being a very commonly used standard in state space search.</p>
+
+<p>The results from this project show that LOES managed to lower memory usage significantly for large tasks when compared to the explicit representation. The lower memory usage did, however, come at the cost of speed with LOES being noticeably slower. Although less drastic, the same differences could be seen when comparing LOES to its compressed version, cLOES. Out of all the tested state set representations, cLOES was shown to be the most compact but also the slowest. Moreover, the results indicated that, even if most tasks didn't benefit from the additional compression provided by cLOES in comparison to normal LOES, the tasks that did, benefited a lot. Lastly, the BDD data structure gave more inconclusive results. The poor BDD results were seemingly caused by an unfit implementation for the closed list use case. The results did, however, suggest that BDD was faster but less compact than LOES for large tasks.</p>
+
+<p>The different closed list state set representations were also tested with four different heuristics: blind, max, CEGAR and Merge-and-Shrink heuristic. A takeaway from these tests was that stronger heuristics resulted in fewer states being stored in the open- and closed list. Moreover, the closed states made up a smaller portion of the total amount states for the stronger heuristics. This smaller number of stored closed states made, as a consequence, the differences between the tested state set representations less pronounced. For large tasks, however, the closed list did get big enough to experience the effect of the efficient closed list implementations.</p>
+
+<p>Conclusively, LOES and cLOES proved strong replacements to explicit representation. Especially in use cases where compactness is more critical than speed such as in embedded systems. Additionally, even though strong heuristics lessened the effect of efficient state set representations, there are still notable advantages to be found for big tasks where the closed list grows large enough.</p>
+</div><br>

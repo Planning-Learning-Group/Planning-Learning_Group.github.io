@@ -1,0 +1,35 @@
+{% extends "page.html" %}
+
+{% block content %}
+<article class="main">
+    <div class="container">
+        <h2>Software and Benchmarks</h2>
+        {{ page.content }}
+        {% for (id,category) in software_categories.items() | sort(attribute="ordering")%}
+        <div class="list-group my-4">
+            <div class="list-group-item list-group-item-primary">
+                <h3 class="mb-0">{{category.name}}</h3>
+            </div>
+            {% for soft in software if soft.category == id %}
+            <div class="list-group-item">
+                {#<span><img src="{{ url('/images/rleap.png') }}" class="d-inline-block" width="40"></span>#}
+                <strong><a href={{soft.url}}>{{soft.title}}</a></strong>: {{soft.description}}
+                {#<ul>
+                    {% for maintainer in soft.maintainers %}
+                    {% if maintainer in people_by_key %}
+                    <li><a href="../{{maintainer}}">{{people_by_key[maintainer].name}}</a></li>
+                    {% else %}
+                    <li>{{maintainer}}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>#}
+            </div>
+            {% endfor%}
+            {% if not loop.last %}
+            <br>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</article>
+{% endblock %}

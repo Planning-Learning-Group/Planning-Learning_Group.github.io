@@ -1,0 +1,16 @@
+{% extends "page.html" %}
+
+{% block content %}
+<article class="main">
+    <div class="container">
+        <h2>Awards</h2>
+
+		<ul>
+        {% for award in awards %}
+            <li><strong>{{ award.name }}</strong> {{ award.description }} for {{ award.awardees }} {{ award.awarded_at }}.</li>
+        {% endfor %}
+        </ul>
+        
+    </div>
+</article>
+{% endblock %}

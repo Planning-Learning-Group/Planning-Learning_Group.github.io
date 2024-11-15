@@ -1,0 +1,5 @@
+-e git+https://github.com/jendrikseipp/biblib.git@v0.1.1#egg=biblib
+invoke==2.2.0
+livereload==2.7.0
+pelican[markdown]==4.9.1
+pyyaml==6.0.1

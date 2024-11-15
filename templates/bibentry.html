@@ -1,0 +1,121 @@
+{% macro link_for(url, filetype) %}
+<a href="{{ url }}" class="btn btn-outline-success btn-sm">{{ filetype }}</a>
+{% endmacro %}
+
+{% macro citation_for(ref) -%}
+{{ link_for(ref.url, 'citation') }}
+{%- endmacro %}
+
+{% macro note(ref) -%}
+{% if ref.note %}<span class="ref-note text-muted"><small>({{ ref.note }})</small></span>{% endif %}
+{%- endmacro %}
+
+{% macro links(ref) -%}
+{% for link in ref.links %}
+    {{ link_for(link.href, link.filetype) }}
+{% endfor %}
+{%- endmacro %}
+
+{% macro pages(ref) -%}
+{% if ref.pages %}, pp. {{ ref.pages }}{% endif %}
+{%- endmacro %}
+
+{% macro journal_article_metadata(ref) -%}
+<span class="ref-container">{{ ref.journal }}</span>
+{% if ref.volume %} {{ ref.volume }}{% endif %}
+{{ pages(ref) }}.
+{%- endmacro %}
+
+{% macro conference_paper_metadata(ref) -%}
+In <span class="ref-container">{{ ref.booktitle }}</span>{{ pages(ref) }}.
+{%- endmacro %}
+
+{% macro mastersthesis_metadata(ref) -%}
+{{ ref.type }}, {{ref.school}},
+{%- endmacro %}
+
+{% macro phdthesis_metadata(ref) -%}
+PhD thesis, {{ ref.school }},
+{%- endmacro %}
+
+{% macro bookchapter_metadata(ref) -%}
+Book chapter in <span class="ref-container">{{ ref.booktitle }}</span>{{ pages(ref) }}.
+{%- endmacro %}
+
+{% macro misc_metadata(ref) -%}
+In <span class="ref-container">{{ ref.howpublished }}</span>{{ pages(ref) }}.
+{%- endmacro %}
+
+{% macro bibentry(ref) -%}
+<p class="ref" id="{{ ref.key }}">
+    {{ ref.author }}.
+    <a class="jump" href="#{{ ref.key }}"></a>
+    <br />
+    <span class="ref-title">{{ ref.title }}.</span>
+    <br />
+    {% if ref.bibtex_type == "article" %}
+      {{ journal_article_metadata(ref) }}
+    {% elif ref.bibtex_type == "inproceedings" %}
+      {{ conference_paper_metadata(ref) }}
+    {% elif ref.bibtex_type == "mastersthesis" %}
+      {{ mastersthesis_metadata(ref) }}
+    {% elif ref.bibtex_type == "phdthesis" %}
+      {{ phdthesis_metadata(ref) }}
+    {% elif ref.bibtex_type == "incollection" %}
+      {{ bookchapter_metadata(ref) }}
+    {% elif ref.bibtex_type == "misc" %}
+      {{ misc_metadata(ref) }}
+    {% else %}
+      Unknown bibtex type {{ ref.bibtex_type }}
+    {% endif %}
+    <span class="ref-date">{{ ref.year }}.</span>
+    <br />
+    {{ links(ref) }}
+    {{ citation_for(ref) }}
+    {{ note(ref) }}
+</p>
+{%- endmacro %}
+
+{% set bibcss %}
+/* jump links for research page, adapted from 6031 */
+.margin {
+  position: fixed;
+  height: 100%;
+}
+
+a.jump {
+  opacity: 0;
+  transition: opacity .5s 0s;
+}
+
+a.jump::after {
+  content: '#';
+}
+
+.margin:hover ~ * a.jump,
+p:hover > a.jump,
+a.jump:hover {
+  opacity: 1;
+  transition: opacity .5s 0s;
+}
+
+[id]:target {
+  animation: highlightout 3s;
+}
+@keyframes highlightout {
+  from { background: #fcf8e3; }
+}
+/* end of jump links */
+
+.ref-link {
+    z-index: 10;
+}
+
+.ref-title {
+  font-weight: bold;
+}
+
+.ref-container {
+  font-style: italic;
+}
+{% endset %}

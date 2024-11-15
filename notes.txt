@@ -1,0 +1,105 @@
+MR website
+
+Pages:
+
+    Landing page
+        group photo
+        short description
+        textual links to personal pages
+        news: new members, new papers, awards, workshops
+
+    Research
+        for all projects: description and relevant publications
+
+    Software
+
+    Positions and Theses
+
+    Personal pages
+        photo
+        infos
+        awards
+        publications
+        teaching? --> CV PDF
+
+    Teaching? --> Possibly later
+
+    Paper pages
+        paper, abstract, slides, poster, recording, bibtex
+
+
+
+Data files:
+
+    Sort entries in news.yaml, awards.yaml and publications.yaml in reverse chronological order.
+
+    news.yaml
+        date: "2021-10-12"
+        message: >-
+          [Simon Ståhlberg](link to personal page), Guillem Francès and [Jendrik
+          Seipp](link to personal page) received the **IJCAI 2021 Distinguished
+          Paper Award** for the paper _Learning Generalized Unsolvability
+          Heuristics for Classical Planning_
+          ([PDF]({static}/papers/stahlberg-et-al-ijcai2021.pdf)) at the 30th
+          International Joint Conference on Artificial Intelligence ([IJCAI
+          2021](https://ijcai-21.org/)).
+
+    awards.yaml
+        awardname: SoCS 2020 Best Paper Award
+        awardee: [John Doe, x-jendrik-seipp, paul-hoft]  # prepend "x-" for work done before joining the group
+        title: My Paper Title
+        product_type: paper
+        awarded_at: the 13th International Symposium on Combinatorial Search
+        document: doe-et-al-socs2020.pdf
+        date: "2020-05-19"
+
+    abbrv.bib, crossref.bib, literatur.bib (from Basel bib repo), extra.bib
+
+    publications.yaml
+        - drexler-et-al-icaps2021:
+          author: [dominik-drexler, jendrik-seipp, x-david-speck]
+        - seipp-et-al-icaps2012:
+          author: [x-jendrik-seipp, Manuel Braun, Johannes Garimort, Malte Helmert]
+          title: My Title Without Latex Commands (Overrides title in bibtex file. usually unneeded)
+          links:
+            - href: /papers/seipp-et-al-tr2012.pdf
+              filetype: technical report
+            - href: https://doi.org/10.5281/zenodo.3951058
+              filetype: code and data
+          note: a note
+          abstract: >-
+            This "abstract" contains 'quotes'
+          # Leave out keywords for now.
+          keywords: [planning, learning, representation-learning, biology]
+          # Leave out type for now. We could also distinguish between conference papers, workshop papers and planner abstracts (all "inproceedings") by searching for "workshop" and "planner abstract" in the bibtex entry.
+          type: conference  # one of [book, inbook, article, proceedings, conference, workshop, techreport, planner-abstract, bachelorsthesis, mastersthesis, phdthesis]
+          projects: [tailor, wasp]  # Can be multiple projects.
+
+          only include papers mentioned in publications.yaml
+          order papers within year by their date
+
+    papers/seipp-et-al-icaps2012.pdf
+    papers/seipp-et-al-icaps2012-slides.pdf
+    papers/seipp-et-al-icaps2012-poster.pdf
+
+    jendrik-seipp.yaml (replace "." with "-" in email address)
+        name: Jendrik Seipp
+        category: head  # one of ["head", "administrator", "researcher", "former"]
+        title: Associate Professor, LiU
+        picture: jseipp.jpg
+        web: https://jendrikseipp.com
+        email: jendrik.seipp@liu.se
+        scholar_id: FIJUptoAAAAJ
+        orcid_id: 0000-0002-2498-8020
+        github: jendrikseipp
+
+    jendrik-seipp.md
+
+
+Tasks:
+
+* Jendrik: publications (generalize bib parsing and publications.yaml)
+* Simon: news
+* Daniel: awards
+* David: personal pages
+* Dominik, Paul: landing page, research page, software, theses and positions
