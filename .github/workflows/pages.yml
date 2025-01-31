@@ -1,0 +1,20 @@
+name: Pelican CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: nelsonjchen/gh-pages-pelican-action@0.2.0
+      env:
+        GH_PAGES_CNAME: mrlab.ai
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+
