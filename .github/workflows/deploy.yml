@@ -1,4 +1,4 @@
-name: Pelican CI
+name: Deploy page
 
 on:
   push:
