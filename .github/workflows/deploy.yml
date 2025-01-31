@@ -15,4 +15,7 @@ jobs:
     - uses: nelsonjchen/gh-pages-pelican-action@0.2.0
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          permissions:
+            contents: read
+            pages: write
 
