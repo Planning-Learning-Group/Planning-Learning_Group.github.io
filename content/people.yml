@@ -13,6 +13,97 @@ categories:
 #   2. Keep keys in alphabetical order.
 
 people:
+
+  - name: Fernando Fernández Rebollo
+    subtitle: Full Professor
+    picture: fernando-fernandez.jpg
+    category: head
+    key: fernando-fernandez
+    personal_web: https://researchportal.uc3m.es/individual/inv16334
+    email: ffernand@inf.uc3m.es
+    scholar_id: H-7902-2015
+    orcid_id: 0000-0003-3801-6801
+    github: https://github.com/FernanUC3M
+    twitter:
+    linkedin: https://www.linkedin.com/in/fernando-fernandez-rebollo/
+    dblp: https://dblp.org/pid/147/3696.html
+    join_date: 2000-01-01
+
+  - name: Susana Fernández Arregui
+    subtitle: Associate Professor  
+    picture: micara2019.jpg 
+    category: scientist
+    key: susana-fernandez 
+    personal_web:
+    email: sfarregu@inf.uc3m.es
+    scholar_id: nX8KHD8AAAAJ&hl
+    orcid_id: 0000-0003-4154-682X
+    github:
+    twitter:
+    linkedin: 
+    dblp: https://dblp.org/pid/37/3253.html
+    join_date: 2000-10-01
+  
+  - name: Raquel Fuentetaja
+    subtitle: Associate professor
+    picture: raquel.png 
+    category: scientist 
+    key: rfuentet 
+    personal_web:
+    email: rfuentet@inf.uc3m.es
+    scholar_id: eo2NLQEAAAAJ
+    orcid_id: 0000-0002-3856-2629
+    github: https://github.com/rfuentet
+    twitter:
+    linkedin:
+    dblp:
+    join_date: 2004-06-01
+
+  - name: Carlos Linares López
+    subtitle: Associate Professor   
+    picture: carlos_linares.png
+    category: scientist 
+    key: carlos-linares 
+    personal_web:
+    email: carlos.linares@uc3m.es
+    scholar_id: IDOjxNoAAAAJ
+    orcid_id: 0000-0003-1811-4754
+    github: https://github.com/clinaresl
+    twitter:
+    linkedin: https://www.linkedin.com/in/carlos-linares-l%C3%B3pez-1134781/
+    dblp: https://dblp.org/pid/21/6753.html
+    join_date: 2004-10-01
+  
+  - name: Angel Garcia Olaya
+    subtitle: Associate Professor   
+    picture: angel-garcia.jpg
+    category: scientist 
+    key: angel-garcia 
+    personal_web:
+    email: agolaya@inf.uc3m.es
+    scholar_id: 4R_owNoAAAAJ
+    orcid_id: 0000-0002-4531-5896
+    github:
+    twitter:
+    linkedin: https://www.linkedin.com/in/agolaya/
+    dblp: https://dblp.org/pid/53/1835.html
+    join_date: 2004-10-01
+  
+  - name: Martha María Del Toro Carballo
+    subtitle: PhD Student
+    picture: martha-del-toro.jpg
+    category: scientist
+    key: martha-del-toro
+    personal_web:
+    email: mdeltoro@pa.uc3m.es
+    scholar_id: o7kyg1gAAAAJ
+    orcid_id: 0000-0002-4313-563X
+    github: https://github.com/mdeltoro97
+    twitter:
+    linkedin: www.linkedin.com/in/martha-del-toro
+    dblp: 
+    join_date: 2023-12-01
+  
   - name: Mauricio Salerno
     subtitle: PhD Student
     picture: mauricio-salerno.jpg
@@ -27,3 +118,55 @@ people:
     linkedin:
     dblp: 
     join_date: 2023-06-01
+  
+  - name: Enrique Mateos-Melero
+    subtitle: PhD Student   
+    picture: enrique-mateos.jpg
+    category: scientist 
+    key: enrique-mateos 
+    personal_web:
+    email: enmateos@pa.uc3m.es
+    scholar_id: C5KsTrcAAAAJ
+    orcid_id: 0009-0003-9314-8062
+    github:
+    twitter:
+    linkedin: https://www.linkedin.com/in/enrique-mateos/
+    dblp:
+    join_date: 2023-03-22
+  
+  - name: Javier Moralejo Piñas
+    subtitle: Scientist
+    picture: javier-moralejo.jpg
+    category: scientist
+    key: javier-moralejo
+    personal_web: www.linkedin.com/in/javier-moralejo-piñas
+    email: j.moralejo.pinas@gmail.com
+    scholar_id: 6qFDLj0AAAAJ
+    orcid_id: 0009-0003-9997-0583
+    github: https://github.com/JavierMP-97
+    twitter:
+    linkedin: www.linkedin.com/in/javier-moralejo-piñas
+    dblp: 
+    join_date: 2023-06-01
+  
+  - name: Tessa Bauman
+    subtitle: External PhD Student 
+    picture: tessa-bauman.jpg 
+    category: scientist 
+    key: tessa-bauman 
+    personal_web:
+    email: tbauman@inf.uc3m.es
+    scholar_id: tmyIPqEAAAAJ&hl=hr
+    orcid_id: 0000-0003-4228-7583
+    github:
+    twitter:
+    linkedin: www.linkedin.com/in/tessa-bauman-44b7b81b7
+    dblp:
+    join_date: 2024-09-02
+
+
+
+
+
+
+

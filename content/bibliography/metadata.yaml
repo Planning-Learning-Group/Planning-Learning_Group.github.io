@@ -4,7 +4,9 @@
 
 mateos-melero-et-al-ewrl2024:
   date: 2024-10-28
-  projects: [naiss, wasp]
+  links:
+    - href: /papers/mateos-melero-et-al-ewrl24.pdf
+      filetype: paper
 
 # example:
 #   date: 2024-06-28

@@ -3,25 +3,23 @@ Template: page
 
 ## Positions
 
-We are currently looking for a **PhD student** to work on [parallel AI planning]({filename}projects/paip.md).
+We are currently looking for a **PhD student** to work on .
 
-We expect that there will be more openings for PhD students and postdocs in the near future. If you are interested in working with us, please contact [jendrik-seipp].
+We expect that there will be more openings for PhD students and postdocs in the near future. If you are interested in working with us, please contact.
 
-Contact: [jendrik-seipp]
+Contact: 
 
 ## Theses
 
 We offer interesting topics for master theses in the field of AI/ML, often with a focus
-on AI planning. If you are interested, please contact us by
-[email](mailto:jendrik.seipp@liu.se). We will then find a topic that suits your
+on AI planning. If you are interested, please contact us by. We will then find a topic that suits your
 interest and background. Here are some examples of available topics:
 
 ### Comparing deep reinforcement learning and classical planning for solving puzzles
 
-A recent
-[paper](https://cse.sc.edu/~foresta/assets/files/SolvingTheRubiksCubeWithDeepReinforcementLearningAndSearch_Final.pdf)
+
 developed the ML pipeline
-[DeepCubeA](https://github.com/forestagostinelli/DeepCubeA) that learns how to
+ that learns how to
 solve Rubik's cube tasks (and other puzzles). DeepCubeA compares favorably
 against optimal classical planning algorithms in experiments, but in contrast to
 the optimal baselines, DeepCubeA doesn't guarantee to find optimal solutions. To
@@ -62,7 +60,7 @@ rewards associated with actions, spanning applications as diverse as computation
 linguistics, power grid reconfiguration, and error-correcting code theory.
 This project focuses on exploring the challenge of finding a reward-optimal plan or,
 in a unit cost setting, the longest plan. For a more detailed description of the
-project, see the [attached document]({static}/resources/student-project-beyond-shortest-paths-maximizing-rewards-in-classical-planning.pdf).
+project, see the.
 
 ### Visualizing action plans with generative machine learning models
 
